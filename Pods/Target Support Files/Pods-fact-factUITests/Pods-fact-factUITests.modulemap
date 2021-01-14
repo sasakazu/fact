@@ -1,0 +1,6 @@
+framework module Pods_fact_factUITests {
+  umbrella header "Pods-fact-factUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
