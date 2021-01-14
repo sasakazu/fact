@@ -9,7 +9,7 @@ target 'fact' do
   # Pods for fact
   pod 'Firebase', '7.2-M1'
   pod 'Firebase/Analytics', '~> 7.2-M1'
-
+  pod 'Firebase/Auth', '~> 7.2.0-M1'
   
   
   
