@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="38j-xz-ORl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w8q-gQ-TZc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -66,6 +66,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IP-Iv-b2M">
+                                <rect key="frame" x="139" y="417" width="137" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="w8q-gQ-TZc" eventType="touchUpInside" id="65P-rN-s1X"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ff-1M-Rqq">
                                 <rect key="frame" x="49" y="206" width="316" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -85,13 +94,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IP-Iv-b2M">
-                                <rect key="frame" x="139" y="417" width="137" height="63"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge2-27-8gB">
+                                <rect key="frame" x="154" y="708" width="106" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="Login"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="log out">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="login:" destination="w8q-gQ-TZc" eventType="touchUpInside" id="65P-rN-s1X"/>
+                                    <action selector="logout:" destination="w8q-gQ-TZc" eventType="touchUpInside" id="f4l-kj-nRd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,15 +191,16 @@
                         <viewLayoutGuide key="safeArea" id="C6M-fC-NJt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="u4d-Kl-LVr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anW-F9-nxG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1958" y="-633"/>
         </scene>
-        <!--View Controller-->
+        <!--Add-->
         <scene sceneID="Ezd-QA-6SK">
             <objects>
-                <viewController id="uo7-tQ-c2o" sceneMemberID="viewController">
+                <viewController id="uo7-tQ-c2o" customClass="add" customModule="fact" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="14G-fH-oV3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,8 +278,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="65S-cP-61x">
-                        <barButtonItem key="rightBarButtonItem" title="メモる" id="56n-O8-QCf"/>
+                        <barButtonItem key="rightBarButtonItem" title="メモる" id="56n-O8-QCf">
+                            <connections>
+                                <action selector="add:" destination="uo7-tQ-c2o" id="Och-4z-GOg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="abstraction" destination="Eee-Fs-6Fh" id="ADT-sq-nXC"/>
+                        <outlet property="fact" destination="Jzq-EK-Ans" id="l8R-zD-Vn5"/>
+                        <outlet property="tenyou" destination="fXC-b4-Z4M" id="wJf-Di-dxc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsi-PF-xgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,14 +18,30 @@ class loginView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
+        let currentUser = Auth.auth().currentUser?.uid
+        print("current user id is \(String(describing: currentUser))")
+        
     }
-    
-    
     
     @IBAction func login(_ sender: Any) {
         
-      
+        Auth.auth().signIn(withEmail: emailTF.text!, password: passTF.text!) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+          // ...
+        }
+    }
+    
+    
+    @IBAction func logout(_ sender: Any) {
+        
+        do{
+            try Auth.auth().signOut()
+            
+        }catch let error as NSError{
+            print(error)
+        }
+        
+        print("logout ok!!")
     }
     
    
