@@ -18,17 +18,14 @@ class loginView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    
     }
     
     
     
     @IBAction func login(_ sender: Any) {
         
-        Auth.auth().createUser(withEmail: emailTF.text!, password: passTF.text!) { authResult, error in
-          
-        }
-        
+      
     }
     
    
