@@ -17,6 +17,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let currentUser = Auth.auth().currentUser?.uid
+        print("current user id is \(String(describing: currentUser))")
        
         tableview.dataSource = self
         tableview.delegate = self
