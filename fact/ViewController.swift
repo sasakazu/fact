@@ -10,7 +10,7 @@ import Firebase
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
   
-    
+    var fuctArray:[fuctData] = []
 
     @IBOutlet weak var tableview: UITableView!
     
@@ -18,12 +18,17 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableview.dataSource = self
+        tableview.delegate = self
+        
+        
         let currentUser = Auth.auth().currentUser?.uid
         print("current user id is \(String(describing: currentUser))")
        
-        tableview.dataSource = self
-        tableview.delegate = self
     
+        
+        
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
